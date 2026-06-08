@@ -9,28 +9,58 @@
 
     <style>
         body {
-            background-color: lightblue;
+            margin: 0;
             font-family: Arial, sans-serif;
+        }
+
+        /* Fundo estilo bandeira do Brasil */
+        .bandeira {
+            height: 100vh; /* ocupa toda a tela */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #009739 33%, #FFCC29 33% 66%, #3E4095 66% 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Dar destaque ao autor */
+        strong {
+            display: block;
+            margin: 10px 0;
         }
     </style>
 </head>
 
 <body>
 
-    <h2>Meu primeiro post</h2>
+    <div class="bandeira">
+        <h2>Meu primeiro post</h2>
 
-    <p>Vou compartilhar sobre candidatos à Presidência da República.</p>
+        <p>Vou compartilhar sobre candidatos à Presidência da República.</p>
 
-    <p><strong>Joias Do Prado</strong></p>
+        <p><strong>Joias Do Prado</strong></p>
 
-    <p>
-        Os candidatos à Presidência da República costumam apresentar propostas voltadas para áreas como economia,
-        saúde, educação, segurança pública e geração de empregos. Durante o período eleitoral, eles participam de
-        debates, entrevistas e eventos de campanha para divulgar seus planos de governo e conquistar o apoio dos
-        eleitores. A escolha do presidente é uma das decisões mais importantes em uma democracia, pois o ocupante do
-        cargo será responsável por liderar o país e influenciar políticas que afetam diretamente a vida da população.
-        É fundamental que os cidadãos analisem as propostas e o histórico dos candidatos antes de votar.
-    </p>
+        <p>
+            Os candidatos à Presidência da República costumam apresentar propostas voltadas para áreas como economia,
+            saúde, educação, segurança pública e geração de empregos. Durante o período eleitoral, eles participam de
+            debates, entrevistas e eventos de campanha para divulgar seus planos de governo e conquistar o apoio dos
+            eleitores. A escolha do presidente é uma das decisões mais importantes em uma democracia, pois o ocupante do
+            cargo será responsável por liderar o país e influenciar políticas que afetam diretamente a vida da população.
+            É fundamental que os cidadãos analisem as propostas e o histórico dos candidatos antes de votar.
+        </p>
+    </div>
 
 </body>
 
