@@ -3,58 +3,98 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Eleitores Famosos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
 
     <style>
         body {
-            font-family: Arial;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
             text-align: center;
-            background: #fff;
+        }
+
+        .titulo {
+            font-size: 3em;
+            margin: 20px 0;
+            padding: 10px 30px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+        }
+
+        p {
+            max-width: 600px;
+            line-height: 1.6;
         }
 
         .card {
-            border: 2px solid black;
-            width: 250px;
-            margin: 20px auto;
+            border: 2px solid #ccc;
             padding: 15px;
+            width: 300px;
             border-radius: 10px;
+            margin-top: 20px;
         }
 
         button {
-            font-size: 20px;
-            margin: 5px;
+            font-size: 18px;
             cursor: pointer;
+            margin: 5px;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Eleitores Famosos</h1>
+    <div class="container">
 
-    <div class="card">
-        <h2>Lula</h2>
+        <!-- 🔵 SEU TEXTO ORIGINAL DO BLOG -->
+        <h2 class="titulo">Meu primeiro post</h2>
 
-        <button onclick="like('lulaLike')">👍 <span id="lulaLike">0</span></button>
-        <button onclick="like('lulaDislike')">👎 <span id="lulaDislike">0</span></button>
-    </div>
+        <p>Vou compartilhar sobre candidatos à Presidência da República.</p>
 
-    <div class="card">
-        <h2>Bolsonaro</h2>
+        <p><strong>Joias Do Prado</strong></p>
 
-        <button onclick="like('bolsoLike')">👍 <span id="bolsoLike">0</span></button>
-        <button onclick="like('bolsoDislike')">👎 <span id="bolsoDislike">0</span></button>
-    </div>
+        <p>
+            Os candidatos à Presidência da República costumam apresentar propostas voltadas para áreas como economia,
+            saúde, educação, segurança pública e geração de empregos. Durante o período eleitoral, eles participam de
+            debates, entrevistas e eventos de campanha para divulgar seus planos de governo e conquistar o apoio dos
+            eleitores. A escolha do presidente é uma das decisões mais importantes em uma democracia.
+        </p>
 
-    <div class="card">
-        <h2>Marina Silva</h2>
+        <!-- 🟢 SISTEMA DE VOTOS -->
 
-        <button onclick="like('marinaLike')">👍 <span id="marinaLike">0</span></button>
-        <button onclick="like('marinaDislike')">👎 <span id="marinaDislike">0</span></button>
+        <div class="card">
+            <h2>Lula</h2>
+            <button onclick="votar('lulaUp')">👍 <span id="lulaUp">0</span></button>
+            <button onclick="votar('lulaDown')">👎 <span id="lulaDown">0</span></button>
+        </div>
+
+        <div class="card">
+            <h2>Bolsonaro</h2>
+            <button onclick="votar('bolsoUp')">👍 <span id="bolsoUp">0</span></button>
+            <button onclick="votar('bolsoDown')">👎 <span id="bolsoDown">0</span></button>
+        </div>
+
+        <div class="card">
+            <h2>Marina Silva</h2>
+            <button onclick="votar('marinaUp')">👍 <span id="marinaUp">0</span></button>
+            <button onclick="votar('marinaDown')">👎 <span id="marinaDown">0</span></button>
+        </div>
+
     </div>
 
     <script>
-        function like(id) {
+        function votar(id) {
             const el = document.getElementById(id);
             el.textContent = Number(el.textContent) + 1;
         }
