@@ -32,6 +32,11 @@
             background-color: #f0f0f0;
         }
 
+        p {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
         .card {
             border: 2px solid #ccc;
             padding: 15px;
@@ -60,57 +65,48 @@
 
         <p>
             Os candidatos à Presidência da República costumam apresentar propostas voltadas para áreas como economia,
-            saúde, educação, segurança pública e geração de empregos.
+            saúde, educação, segurança pública e geração de empregos. Durante o período eleitoral, eles participam de
+            debates, entrevistas e eventos de campanha para divulgar seus planos de governo e conquistar o apoio dos
+            eleitores. A escolha do presidente é uma das decisões mais importantes em uma democracia.
         </p>
 
         <!-- LULA -->
         <div class="card">
             <h3>Lula</h3>
-            <button id="lulaUpBtn" onclick="votar('lulaUpBtn', 'lulaUp')">
-                👍 <span id="lulaUp">0</span>
-            </button>
-
-            <button id="lulaDownBtn" onclick="votar('lulaDownBtn', 'lulaDown')">
-                👎 <span id="lulaDown">0</span>
-            </button>
+            <button onclick="votar('lulaUp')">👍 <span id="lulaUp">0</span></button>
+            <button onclick="votar('lulaDown')">👎 <span id="lulaDown">0</span></button>
         </div>
 
         <!-- BOLSONARO -->
         <div class="card">
             <h3>Bolsonaro</h3>
-            <button id="bolsoUpBtn" onclick="votar('bolsoUpBtn', 'bolsoUp')">
-                👍 <span id="bolsoUp">0</span>
-            </button>
-
-            <button id="bolsoDownBtn" onclick="votar('bolsoDownBtn', 'bolsoDown')">
-                👎 <span id="bolsoDown">0</span>
-            </button>
+            <button onclick="votar('bolsoUp')">👍 <span id="bolsoUp">0</span></button>
+            <button onclick="votar('bolsoDown')">👎 <span id="bolsoDown">0</span></button>
         </div>
 
         <!-- MARINA -->
         <div class="card">
             <h3>Marina Silva</h3>
-            <button id="marinaUpBtn" onclick="votar('marinaUpBtn', 'marinaUp')">
-                👍 <span id="marinaUp">0</span>
-            </button>
-
-            <button id="marinaDownBtn" onclick="votar('marinaDownBtn', 'marinaDown')">
-                👎 <span id="marinaDown">0</span>
-            </button>
+            <button onclick="votar('marinaUp')">👍 <span id="marinaUp">0</span></button>
+            <button onclick="votar('marinaDown')">👎 <span id="marinaDown">0</span></button>
         </div>
 
     </div>
 
+    <!-- 🔥 SÓ AQUI FOI ALTERADO -->
     <script>
-        const votos = {}; // controla quem já votou
+        const votos = {};
 
-        function votar(btnId, spanId) {
-            if (votos[btnId]) return; // já clicou → bloqueia
+        function votar(id) {
 
-            const el = document.getElementById(spanId);
+            if (votos[id]) {
+                return; // impede clicar mais de 1 vez
+            }
+
+            const el = document.getElementById(id);
             el.textContent = Number(el.textContent) + 1;
 
-            votos[btnId] = true; // marca como usado
+            votos[id] = true;
         }
     </script>
 
