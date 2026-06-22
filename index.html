@@ -14,13 +14,13 @@
             color: black;
         }
 
-        .container {
+        .bandeira {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
             text-align: center;
+            padding: 20px;
         }
 
         .titulo {
@@ -40,9 +40,9 @@
         .card {
             border: 2px solid #ccc;
             padding: 15px;
-            width: 300px;
-            border-radius: 10px;
+            width: 280px;
             margin-top: 20px;
+            border-radius: 10px;
         }
 
         button {
@@ -55,11 +55,12 @@
 
 <body>
 
-    <div class="container">
+    <div class="bandeira">
 
-        <!-- 🔵 SEU TEXTO ORIGINAL DO BLOG -->
+        <!-- 🔵 TÍTULO ORIGINAL -->
         <h2 class="titulo">Meu primeiro post</h2>
 
+        <!-- 🔵 INTRODUÇÃO ORIGINAL (AGORA ESTÁ AQUI) -->
         <p>Vou compartilhar sobre candidatos à Presidência da República.</p>
 
         <p><strong>Joias Do Prado</strong></p>
@@ -68,25 +69,27 @@
             Os candidatos à Presidência da República costumam apresentar propostas voltadas para áreas como economia,
             saúde, educação, segurança pública e geração de empregos. Durante o período eleitoral, eles participam de
             debates, entrevistas e eventos de campanha para divulgar seus planos de governo e conquistar o apoio dos
-            eleitores. A escolha do presidente é uma das decisões mais importantes em uma democracia.
+            eleitores. A escolha do presidente é uma das decisões mais importantes em uma democracia, pois o ocupante do
+            cargo será responsável por liderar o país e influenciar políticas que afetam diretamente a vida da população.
+            É fundamental que os cidadãos analisem as propostas e o histórico dos candidatos antes de votar.
         </p>
 
-        <!-- 🟢 SISTEMA DE VOTOS -->
+        <!-- 🟢 VOTAÇÃO -->
 
         <div class="card">
-            <h2>Lula</h2>
+            <h3>Lula</h3>
             <button onclick="votar('lulaUp')">👍 <span id="lulaUp">0</span></button>
             <button onclick="votar('lulaDown')">👎 <span id="lulaDown">0</span></button>
         </div>
 
         <div class="card">
-            <h2>Bolsonaro</h2>
+            <h3>Bolsonaro</h3>
             <button onclick="votar('bolsoUp')">👍 <span id="bolsoUp">0</span></button>
             <button onclick="votar('bolsoDown')">👎 <span id="bolsoDown">0</span></button>
         </div>
 
         <div class="card">
-            <h2>Marina Silva</h2>
+            <h3>Marina Silva</h3>
             <button onclick="votar('marinaUp')">👍 <span id="marinaUp">0</span></button>
             <button onclick="votar('marinaDown')">👎 <span id="marinaDown">0</span></button>
         </div>
