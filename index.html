@@ -3,102 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eleitores Famosos</title>
 
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: black;
-        }
-
-        .container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            gap: 20px;
-        }
-
-        .titulo {
-            font-size: 2.5em;
-            border: 3px solid black;
-            padding: 10px 20px;
-            border-radius: 10px;
-            background: #f0f0f0;
+            font-family: Arial;
+            text-align: center;
+            background: #fff;
         }
 
         .card {
-            border: 2px solid #ccc;
+            border: 2px solid black;
+            width: 250px;
+            margin: 20px auto;
             padding: 15px;
-            width: 300px;
             border-radius: 10px;
-            text-align: center;
-        }
-
-        .botoes {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
         }
 
         button {
-            font-size: 18px;
+            font-size: 20px;
+            margin: 5px;
             cursor: pointer;
-            padding: 5px 10px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <h1>Eleitores Famosos</h1>
 
-        <h1 class="titulo">Eleitores Famosos</h1>
+    <div class="card">
+        <h2>Lula</h2>
 
-        <!-- Pessoa 1 -->
-        <div class="card">
-            <h2>Lula</h2>
-            <p>Ex-presidente do Brasil</p>
+        <button onclick="like('lulaLike')">👍 <span id="lulaLike">0</span></button>
+        <button onclick="like('lulaDislike')">👎 <span id="lulaDislike">0</span></button>
+    </div>
 
-            <div class="botoes">
-                <button onclick="votar('lulaUp')">👍 <span id="lulaUp">0</span></button>
-                <button onclick="votar('lulaDown')">👎 <span id="lulaDown">0</span></button>
-            </div>
-        </div>
+    <div class="card">
+        <h2>Bolsonaro</h2>
 
-        <!-- Pessoa 2 -->
-        <div class="card">
-            <h2>Bolsonaro</h2>
-            <p>Ex-presidente do Brasil</p>
+        <button onclick="like('bolsoLike')">👍 <span id="bolsoLike">0</span></button>
+        <button onclick="like('bolsoDislike')">👎 <span id="bolsoDislike">0</span></button>
+    </div>
 
-            <div class="botoes">
-                <button onclick="votar('bolsoUp')">👍 <span id="bolsoUp">0</span></button>
-                <button onclick="votar('bolsoDown')">👎 <span id="bolsoDown">0</span></button>
-            </div>
-        </div>
+    <div class="card">
+        <h2>Marina Silva</h2>
 
-        <!-- Pessoa 3 -->
-        <div class="card">
-            <h2>Marina Silva</h2>
-            <p>Política brasileira</p>
-
-            <div class="botoes">
-                <button onclick="votar('marinaUp')">👍 <span id="marinaUp">0</span></button>
-                <button onclick="votar('marinaDown')">👎 <span id="marinaDown">0</span></button>
-            </div>
-        </div>
-
+        <button onclick="like('marinaLike')">👍 <span id="marinaLike">0</span></button>
+        <button onclick="like('marinaDislike')">👎 <span id="marinaDislike">0</span></button>
     </div>
 
     <script>
-        function votar(id) {
-            const elemento = document.getElementById(id);
-            elemento.textContent = Number(elemento.textContent) + 1;
+        function like(id) {
+            const el = document.getElementById(id);
+            el.textContent = Number(el.textContent) + 1;
         }
     </script>
 
