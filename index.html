@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Blog de Votação</title>
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: white;
-            color: black;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
-        .bandeira {
+        .container {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -24,7 +24,7 @@
         }
 
         .titulo {
-            font-size: 3em;
+            font-size: 2.5em;
             margin: 20px 0;
             padding: 10px 30px;
             border: 3px solid black;
@@ -43,19 +43,30 @@
             width: 280px;
             margin-top: 20px;
             border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         button {
             font-size: 18px;
             cursor: pointer;
             margin: 5px;
+            padding: 5px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="bandeira">
+    <div class="container">
 
         <h2 class="titulo">Meu primeiro post</h2>
 
@@ -63,49 +74,51 @@
 
         <p><strong>Joias Do Prado</strong></p>
 
-        <!-- 🔵 TEXTO COMPLETO ORIGINAL (SEM CORTAR NADA) -->
         <p>
             Os candidatos à Presidência da República costumam apresentar propostas voltadas para áreas como economia,
-            saúde, educação, segurança pública e geração de empregos. Durante o período eleitoral, eles participam de
-            debates, entrevistas e eventos de campanha para divulgar seus planos de governo e conquistar o apoio dos
-            eleitores. A escolha do presidente é uma das decisões mais importantes em uma democracia, pois o ocupante do
-            cargo será responsável por liderar o país e influenciar políticas que afetam diretamente a vida da população.
-            É fundamental que os cidadãos analisem as propostas e o histórico dos candidatos antes de votar.
+            saúde, educação, segurança pública e geração de empregos. É fundamental que os cidadãos analisem as propostas e o histórico dos candidatos antes de votar.
         </p>
 
-        <!-- LULA -->
         <div class="card">
             <h3>Lula</h3>
-            <button onclick="votar('lulaUp')">👍 <span id="lulaUp">0</span></button>
-            <button onclick="votar('lulaDown')">👎 <span id="lulaDown">0</span></button>
+            <button onclick="votar('lula', 'Up')">👍 <span id="lulaUp">0</span></button>
+            <button onclick="votar('lula', 'Down')">👎 <span id="lulaDown">0</span></button>
         </div>
 
-        <!-- BOLSONARO -->
         <div class="card">
             <h3>Bolsonaro</h3>
-            <button onclick="votar('bolsoUp')">👍 <span id="bolsoUp">0</span></button>
-            <button onclick="votar('bolsoDown')">👎 <span id="bolsoDown">0</span></button>
+            <button onclick="votar('bolso', 'Up')">👍 <span id="bolsoUp">0</span></button>
+            <button onclick="votar('bolso', 'Down')">👎 <span id="bolsoDown">0</span></button>
         </div>
 
-        <!-- MARINA -->
         <div class="card">
             <h3>Marina Silva</h3>
-            <button onclick="votar('marinaUp')">👍 <span id="marinaUp">0</span></button>
-            <button onclick="votar('marinaDown')">👎 <span id="marinaDown">0</span></button>
+            <button onclick="votar('marina', 'Up')">👍 <span id="marinaUp">0</span></button>
+            <button onclick="votar('marina', 'Down')">👎 <span id="marinaDown">0</span></button>
         </div>
 
     </div>
 
     <script>
-        const votos = {};
+        // Objeto para controlar quais candidatos já receberam voto neste acesso
+        const candidatosVotados = {};
 
-        function votar(id) {
-            if (votos[id]) return;
+        function votar(candidato, tipo) {
+            // Se o candidato já foi votado, impede um novo voto (seja up ou down)
+            if (candidatosVotados[candidato]) {
+                alert("Você já votou neste candidato!");
+                return;
+            }
 
-            const el = document.getElementById(id);
+            // Seleciona o elemento correto (ex: lulaUp ou bolsoDown)
+            const idElemento = candidato + tipo;
+            const el = document.getElementById(idElemento);
+            
+            // Incrementa o valor
             el.textContent = Number(el.textContent) + 1;
 
-            votos[id] = true;
+            // Marca que este candidato já recebeu uma interação
+            candidatosVotados[candidato] = true;
         }
     </script>
 
